@@ -27,9 +27,4 @@ void RCC_voidDisableClock(u8 Copy_u8BusId, u8 Copy_u8PerId);
 #define	IOPC	4
 
 
-
-
-
-
-
 #endif

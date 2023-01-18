@@ -68,9 +68,9 @@ void RCC_voidInitSysClock(void)
 		#if RCC_PLL_CLK == RCC_PLL_CLK_HSI_DIV_2
 			
 			CLR_BIT(RCC_CFGR,RCC_CFGR_PLLSRC);
-			SET_BIT(RCC_CR,RCC_CR_HSEON);
+			SET_BIT(RCC_CR,RCC_CR_HSION);
 			
-			while(GET_BIT(RCC_CR,RCC_CR_HSERDY) != 1)
+			while(GET_BIT(RCC_CR,RCC_CR_HSIRDY) != 1)
 			{
 				//wait
 			}
@@ -88,10 +88,10 @@ void RCC_voidInitSysClock(void)
 		#elif RCC_PLL_CLK == RCC_PLL_CLK_HSE_DIV_2	
 		
 			SET_BIT(RCC_CFGR,RCC_CFGR_PLLSRC);
-			SET_BIT(RCC_CR,RCC_CR_HSION);
+			SET_BIT(RCC_CR,RCC_CR_HSEON);
 			SET_BIT(RCC_CFGR,RCC_CFGR_PLLXTPRE);
 			
-			while(GET_BIT(RCC_CR,RCC_CR_HSIRDY) != 1)
+			while(GET_BIT(RCC_CR,RCC_CR_HSERDY) != 1)
 			{
 				//wait
 			}
@@ -109,9 +109,9 @@ void RCC_voidInitSysClock(void)
 		#elif RCC_PLL_CLK == RCC_PLL_CLK_HSE
 		
 			SET_BIT(RCC_CFGR,RCC_CFGR_PLLSRC);
-			SET_BIT(RCC_CR,RCC_CR_HSION);
+			SET_BIT(RCC_CR,RCC_CR_HSEON);
 			
-			while(GET_BIT(RCC_CR,RCC_CR_HSIRDY) != 1)
+			while(GET_BIT(RCC_CR,RCC_CR_HSERDY) != 1)
 			{
 				//wait
 			}

@@ -11,12 +11,12 @@
 #define RCC_PRIVATE_H
 
 
-/*Register base Address*/
+/*Register Base Address*/
 #define RCC_BASE_ADDRESS 0x40021000
 
 
-/* Register Definitions */
-#define RCC_CR         *((u32*)(RCC_BASE_ADDRESS+0x00))		  //Clock control register
+/**********	Clock control register	**************/
+#define RCC_CR         *((u32*)(RCC_BASE_ADDRESS+0x00))		  
 
 #define RCC_CR_HSION		1		//Internal high-speed clock enable
 #define RCC_CR_HSIRDY		2       //Internal high-speed clock ready flag
@@ -28,25 +28,41 @@
 #define RCC_CR_PLLRDY		25      //PLL clock ready flag
 
 
-#define RCC_CFGR       *((u32*)(RCC_BASE_ADDRESS+0x04))       //Clock configuration register 
+/*********	Clock configuration register  ************/ 
+#define RCC_CFGR       *((u32*)(RCC_BASE_ADDRESS+0x04))      
 
-#define RCC_CFGR_PLLSRC		16		//PLL entry clock source
-#define RCC_CFGR_PLLXTPRE	17		//HSE divider for PLL entry
 #define RCC_CFGR_SW0		0		//System clock switch0
 #define RCC_CFGR_SW1		1		//System clock switch1
+#define RCC_CFGR_PLLSRC		16		//PLL entry clock source
+#define RCC_CFGR_PLLXTPRE	17		//HSE divider for PLL entry
 
 
 
 
 
-#define RCC_CIR        *((u32*)(RCC_BASE_ADDRESS+0x08))       //Clock interrupt register
-#define RCC_APB2RSTR   *((u32*)(RCC_BASE_ADDRESS+0x0C))       //APB2 	peripheral reset register 
-#define RCC_APB1RSTR   *((u32*)(RCC_BASE_ADDRESS+0x10))       //APB1 	peripheral reset register
-#define RCC_AHBENR     *((u32*)(RCC_BASE_ADDRESS+0x14))       //AHB  	peripheral clock enable register
-#define RCC_APB2ENR    *((u32*)(RCC_BASE_ADDRESS+0x18))       //APB1 	peripheral clock enable register
-#define RCC_APB1ENR    *((u32*)(RCC_BASE_ADDRESS+0x1C))       //APB2 	peripheral clock enable register
-#define RCC_BDCR       *((u32*)(RCC_BASE_ADDRESS+0x20))       //Backup domain control register
-#define RCC_CSR        *((u32*)(RCC_BASE_ADDRESS+0x24))       //Control/status register
+/************	Clock interrupt register	****************/
+#define RCC_CIR        *((u32*)(RCC_BASE_ADDRESS+0x08))
+ 
+/**************APB2 peripheral reset register	*****************/ 
+#define RCC_APB2RSTR   *((u32*)(RCC_BASE_ADDRESS+0x0C)) 
+
+/************	APB1 peripheral reset register	****************/      
+#define RCC_APB1RSTR   *((u32*)(RCC_BASE_ADDRESS+0x10))   
+
+/************	AHB peripheral clock enable register	************/    
+#define RCC_AHBENR     *((u32*)(RCC_BASE_ADDRESS+0x14))       
+
+/************	APB1 peripheral clock enable register	************/
+#define RCC_APB2ENR    *((u32*)(RCC_BASE_ADDRESS+0x18))     
+
+/************	APB2 peripheral clock enable register *************/ 
+#define RCC_APB1ENR    *((u32*)(RCC_BASE_ADDRESS+0x1C))    
+
+/************	Backup domain control register	**************/   
+#define RCC_BDCR       *((u32*)(RCC_BASE_ADDRESS+0x20))     
+
+/**************	Control/status register	*****************/  
+#define RCC_CSR        *((u32*)(RCC_BASE_ADDRESS+0x24))       
 
 
 
